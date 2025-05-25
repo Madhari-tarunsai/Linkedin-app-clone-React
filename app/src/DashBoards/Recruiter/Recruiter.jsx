@@ -1,9 +1,17 @@
-import React from 'react'
-
+import React from "react";
+import Sidebarr from "./Sidebarr/Sidebarr";
+import './Recruiter.css'
 const Recruiter = () => {
   return (
-    <div>Recruiter</div>
-  )
-}
+    <div className="r-dashboard">
+      <div className="sidebar">
+        <Sidebarr />
+      </div>
+      <div className="main">
 
-export default Recruiter
+      </div>
+    </div>
+  );
+};
+
+export default Recruiter;

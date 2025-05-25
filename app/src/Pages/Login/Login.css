@@ -1,0 +1,80 @@
+/* Full background image for login page */
+.login-page {
+  background-image: url('https://media.licdn.com/dms/image/v2/D4E12AQE-p3DqYQuFAA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1707571294004?e=2147483647&v=beta&t=IsThq6zEee4qMih2uK0ehQW1h6fwZlpLFmcysanzZAU');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Login box styling */
+.login-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-box h1 {
+  color: #004182;
+  margin-bottom: 1.5rem;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-box input,
+.login-box select {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.login-box button {
+  padding: 0.8rem;
+  background-color: #0077b5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #005f8d;
+}
+
+.login-box p {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.login-box a {
+  color: #0077b5;
+  text-decoration: none;
+}
+
+.login-box a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .login-box {
+    padding: 1.5rem;
+  }
+
+  .login-box h1 {
+    font-size: 1.5rem;
+  }
+}

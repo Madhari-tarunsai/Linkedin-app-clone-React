@@ -1,0 +1,45 @@
+#navbarScroll{
+    flex-grow: 0 !important;
+}
+
+.navbar {
+  background-color: #0077b5 !important; /* LinkedIn blue */
+  padding: 0.7rem 1rem;
+}
+
+.navbar-brand h1 {
+  color:#0077b5;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.navbar-toggler {
+  border-color:black;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.nav-link {
+  color:black !important;
+  margin-left: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color:blue !important;
+  text-decoration: none;
+  border: 3px solid black;
+  border-radius: 8px;
+  background-color: palegoldenrod;
+}

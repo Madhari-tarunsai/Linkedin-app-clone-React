@@ -2,5 +2,21 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    gap:20px
+    gap:20px;
+    text-align: center;
+    
+}
+.sider-links>.p1{
+    border: 2px solid black;
+    width: 7rem;
+    border-radius: 6px;
+    padding: 5px;
+    color: black;
+}
+.sider-links>.p2{
+    border: 2px solid black;
+    width: 7rem;
+    border-radius: 6px;
+    padding: 5px;
+    color: black;
 }

@@ -5,9 +5,9 @@ import './Sidebarr.css'
 const Sidebarr = () => {
   return (
     <div className='sider-links'>
-        <Link to='Posting'>Posting</Link>
-         <Link to='My Jobs'>My Jobs</Link>
-          <Link to='my Posts'>my Posts</Link>
+        <Link to='My_post' className='p1'>Posting job</Link>
+         <Link to='My_jobs' className='p2'>My posting</Link>
+          
     </div>
   )
 }

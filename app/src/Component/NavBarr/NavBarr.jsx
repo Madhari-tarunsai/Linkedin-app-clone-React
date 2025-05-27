@@ -7,7 +7,7 @@ import { signOut, getAuth } from 'firebase/auth';
 
 const NavBarr = () => {
   const navigate = useNavigate();
-  const logginuser = JSON.parse(localStorage.getItem("loggInRecruiter")); // Adjust this key if needed
+  const logginuser = JSON.parse(localStorage.getItem("loggInRecruiter"));
 
   const handleLogout = async () => {
     const auth = getAuth();
@@ -35,7 +35,7 @@ const NavBarr = () => {
             <Nav className="ms-auto my-2 my-lg-0" navbarScroll>
               {logginuser ? (
                 <>
-                  <span className="nav-link">Welcome, <strong>{logginuser.name}</strong></span>
+                  <span className="nav-link">Welcome <strong>{logginuser.user.displayName}</strong></span>
                   <button className="btn btn-outline-danger ms-2" onClick={handleLogout}>
                     Logout
                   </button>

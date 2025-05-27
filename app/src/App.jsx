@@ -8,6 +8,7 @@ import Home from './Component/Home/Home';
 import Recruiter from './DashBoards/Recruiter/Recruiter';
 import Myposting from './DashBoards/Recruiter/Myposting/Myposting';
 import Postjobs from './DashBoards/Recruiter/Postjobs/Postjobs';
+import Jobseeker from './DashBoards/JobSeeker/Jobseeker';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/jobseekerDashBoard' element={<Jobseeker/>} ></Route>
         <Route path='/recruiterDashboard' element={<Recruiter />} >
             <Route path='My_jobs' element={<Myposting/>}/>
             <Route path='My_post' element={<Postjobs/>}/>

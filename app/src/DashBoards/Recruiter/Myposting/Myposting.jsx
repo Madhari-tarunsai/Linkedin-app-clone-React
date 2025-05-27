@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { database } from '../../../FireBase/FireBase';
 
 const Myposting = () => {
   const [myJobs, setMyJobs] = useState([]);
   const [loading, setloading] = useState(true);
   const loggeduser = JSON.parse(localStorage.getItem("loggInRecruiter"));
+  const loggedUserName=loggeduser.user.displayName
 
   useEffect(() => {
     const getchingData = async () => {
-      const docref = doc(database, "recruiters", loggeduser.user.displayName);
+      const docref = doc(database, "recruiters", loggedUserName);
       const getDocRef = await getDoc(docref);
 
       if (getDocRef.exists()) {
@@ -24,6 +25,20 @@ const Myposting = () => {
 
   if (loading) {
     return <p className="loading">Loading...</p>;
+  }
+
+  const handlerDelete=async(choosedJobIndex)=>{
+    let jobFilter=myJobs.filter((job,index)=>index!=choosedJobIndex)
+    console.log(jobFilter)
+    // alert(`job delete sucessfully ${loggedUserName}`)
+    // setMyJobs(jobFilter)
+    const docref=doc(database,"recruiters",loggedUserName)
+    await updateDoc(docref,{
+      jobs:jobFilter
+    })
+    alert(`job delete sucessfully ${loggedUserName}`)
+    setMyJobs(jobFilter)
+    
   }
 
   return (
@@ -90,11 +105,15 @@ const Myposting = () => {
 
       <div className="job-container">
         {myJobs.length > 0 ? (
-          myJobs.map((myJob, index) => (
-            <div className="job-card" key={index}>
+          myJobs.map((myJob, jobIndex) => (
+            <div className="job-card" key={jobIndex}>
               <h3 className="job-title">{myJob.company}</h3>
               <p className="job-role">{myJob.role}</p>
               <p className="job-desc">{myJob.jd}</p>
+              <div style={{display:'flex',gap:'30px'}}>
+                <span style={{border:"2px solid black",padding:'5',borderRadius:'4px', backgroundColor:'wheat'}}>Edit</span>
+                <span style={{border:"2px solid black",padding:'5',borderRadius:'4px', backgroundColor:'red',color:'white'}} onClick={()=>handlerDelete(jobIndex)}>Delete</span>
+              </div>
             </div>
           ))
         ) : (
